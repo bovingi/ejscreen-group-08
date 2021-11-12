@@ -1,0 +1,21 @@
+---
+title: "Group 08 CA pollution burden"
+author: "Indra Boving & Katheryn Moya"
+date: "11/12/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(janitor)
+library(here)
+```
+
+```{r}
+#read in data and make names lower snake case: 
+ces <- read_csv(here("data", "ces3demographics.csv")) %>% 
+clean_names()
+```
+
