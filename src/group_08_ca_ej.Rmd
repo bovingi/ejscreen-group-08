@@ -6,14 +6,12 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 
 library(tidyverse)
 library(janitor)
 library(here)
 
-install.packages("viridis")
-library(viridis)
 ```
 
 ```{r}
@@ -22,11 +20,12 @@ ces <- read_csv(here("data", "ces3demographics.csv")) %>%
 clean_names()
 ```
 
-```{r}
+```{r, fig.cap="Fig. 1: CalEnviroScreen 3.0 (California Communities Environmental Health Screening Tool) scores as a proxy for environmental burden and percent of community that indentifies as white. Census data from 2010 census.}
 ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) +
   geom_hex(size = 1) +
+  scale_fill_gradient(low = "olivedrab1", high = "olivedrab4") +
   labs(y = "CalEnviroScreen 3.0 Score", 
        x = "% White Population") +
-  scale_fill_viridis(discrete=FALSE) 
+  theme_minimal()
 ```
 
