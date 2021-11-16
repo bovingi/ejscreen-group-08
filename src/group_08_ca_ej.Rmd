@@ -20,7 +20,7 @@ ces <- read_csv(here("data", "ces3demographics.csv")) %>%
 clean_names()
 ```
 
-```{r, fig.cap="Fig. 1: CalEnviroScreen 3.0 (California Communities Environmental Health Screening Tool) scores as a proxy for environmental burden and percent of community that indentifies as white. Census data from 2010 census.}
+```{r, fig.cap="**Fig. 1.** CalEnviroScreen 3.0 (California Communities Environmental Health Screening Tool) scores as a proxy for environmental burden and percent of community that indentifies as white. Census data from 2010 census.}
 ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) +
   geom_hex(size = 1) +
   scale_fill_gradient(low = "olivedrab1", high = "olivedrab4") +
@@ -29,3 +29,6 @@ ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) +
   theme_minimal()
 ```
 
+This graph demonstrates that on average communities with a higher percentage of white households experience less environmental burdens as seen by lower CES scores.
+
+**Data citation:** OEHHA. CalEnviroScreen 3.0. 2017. https://oehha.ca.gov/calenviroscreen/report/calenviroscreen-30. Accessed 16 November, 2021
