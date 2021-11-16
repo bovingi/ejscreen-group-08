@@ -21,6 +21,8 @@ clean_names()
 
 ```{r}
 ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) +
-  geom_point()
+  geom_hex(size = 1) +
+  labs(y = "CalEnviroScreen 3.0 Score", 
+       x = "% White Population")
 ```
 
