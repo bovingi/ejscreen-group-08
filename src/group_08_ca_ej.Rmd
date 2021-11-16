@@ -1,12 +1,12 @@
 ---
 title: "Group 08 CA pollution burden"
 author: "Indra Boving & Katheryn Moya"
-date: "11/12/2021"
+date: "11/16/2021"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
 library(tidyverse)
 library(janitor)
@@ -20,7 +20,7 @@ ces <- read_csv(here("data", "ces3demographics.csv")) %>%
 clean_names()
 ```
 
-```{r, fig.cap="**Fig. 1.** CalEnviroScreen 3.0 (California Communities Environmental Health Screening Tool) scores as a proxy for environmental burden and percent of community that indentifies as white. Census data from 2010 census.}
+```{r, fig.cap="**Fig. 1.** CalEnviroScreen 3.0 (California Communities Environmental Health Screening Tool) scores as a proxy for environmental burden and percent of community that indentifies as white. Census data from 2010 census."}
 ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) +
   geom_hex(size = 1) +
   scale_fill_gradient(low = "olivedrab1", high = "olivedrab4") +
