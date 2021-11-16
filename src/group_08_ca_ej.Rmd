@@ -22,7 +22,9 @@ clean_names()
 ```{r}
 ggplot(data = ces, aes(x = white_percent, y = ces_3_0_score)) +
   geom_hex(size = 1) +
+  scale_fill_gradient(low = "olivedrab1", high = "olivedrab4") +
   labs(y = "CalEnviroScreen 3.0 Score", 
-       x = "% White Population")
+       x = "% White Population") +
+  theme_minimal()
 ```
 
